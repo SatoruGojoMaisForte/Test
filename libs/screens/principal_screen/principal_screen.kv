@@ -1,0 +1,43 @@
+#: import NavigationsButtons libs.components.navigation_buttons.NavigationsButtons
+
+<PerfilScreen>:
+    name: 'Perfil'
+    md_bg_color: 1, 1, 1, 1
+
+    FloatLayout:
+        id: box
+        MDCard:
+            size_hint: 1, 0.1
+            theme_bg_color: 'Custom'
+            md_bg_color: 1, 1, 1, 1
+            pos_hint: {'center_y': 0.95, 'center_x': 0.5}
+
+            MDRelativeLayout:
+
+                MDLabel:
+                    text: root.username
+                    font_style: 'Headline'
+                    pos_hint: {'center_y': 0.5, 'center_x': 0.52}
+                    role: 'large'
+                    bold: True
+                    theme_text_color: 'Custom'
+                    text_color: 'black'
+        MDCard:
+            size_hint: 1, 0.16
+            theme_bg_color: 'Custom'
+            md_bg_color: 0.5, 0.3, 1, 1
+            pos_hint: {'center_y': 0.83, 'center_x': 0.52}
+
+            MDRelativeLayout:
+                AsyncImage:
+                    source: root.avatar
+                    size_hint: None, None
+                    size: '110dp', '110dp'
+
+                MDLabel:
+                    text: 'Pedreiros'
+
+
+    NavigationsButtons:
+        nome: root.username
+        avatar: root.avatar

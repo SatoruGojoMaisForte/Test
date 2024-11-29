@@ -1,0 +1,57 @@
+<BricklayerScreen>:
+    name: 'Bricklayer'
+    md_bg_color: 1, 1, 1, 1
+
+    FloatLayout:
+        id: principal
+        MDCard:
+            size_hint: 1, 0.1
+            theme_bg_color: 'Custom'
+            md_bg_color: 1, 1, 1, 1
+            pos_hint: {'center_y': 0.92, 'center_x': 0.5}
+
+            MDRelativeLayout:
+
+                MDLabel:
+                    text: 'Mestre de Obra'
+                    font_style: 'Headline'
+                    pos_hint: {'center_y': 0.5, 'center_x': 0.52}
+                    role: 'large'
+                    bold: True
+                    halign: 'center'
+                    theme_text_color: 'Custom'
+                    text_color: 'black'
+
+                MDLabel:
+                    text: root.nome
+                    font_style: 'Headline'
+                    pos_hint: {'center_y': 0.1, 'center_x': 0.52}
+                    role: 'small'
+                    halign: 'center'
+        MDCard:
+            size_hint: 1, 0.16
+            theme_bg_color: 'Custom'
+            md_bg_color: 1, 1, 1, 1
+            pos_hint: {'center_y': 0.75, 'center_x': 0.5}
+
+            MDRelativeLayout:
+                AsyncImage:
+                    source: root.avatar
+                    size_hint: None, None
+                    halign: 'center'
+                    size: '110dp', '110dp'
+                    pos_hint: {'center_y': 0.5, 'center_x': 0.5}
+
+        MDScrollView:
+            size_hint: 0.81, 0.38
+            pos_hint: {'center_x': 0.5, 'center_y': 0.37}
+            theme_bg_color: 'Custom'
+
+            do_scroll_x: False
+
+            MDBoxLayout:
+                id: main_scroll
+                orientation: "vertical"
+                adaptive_height: True
+                spacing: 10
+
