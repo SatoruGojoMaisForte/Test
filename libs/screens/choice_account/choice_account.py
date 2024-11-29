@@ -10,3 +10,7 @@ class ChoiceAccount(MDScreen):
     def contratante(self):
         self.manager.transition = SlideTransition(direction='left')
         self.manager.current = 'RegisterContractor'
+
+    def voltar(self):
+        self.manager.transition = SlideTransition(direction='right')
+        self.manager.current = 'Init'
