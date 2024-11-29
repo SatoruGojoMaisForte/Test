@@ -120,10 +120,9 @@ class InitScreen(MDScreen):
             self.ids.senha_errada.text = 'Senha incorreta'
             self.ids.senha.error = True
 
-
     def register(self):
         self.manager.transition = SlideTransition(direction='left')
-        self.manager.current = 'Register'
+        self.manager.current = 'ChoiceAccount'
 
     def go_to_next(self, perfil, name):
         self.manager.transition = SlideTransition(direction='left')
