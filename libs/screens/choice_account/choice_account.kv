@@ -3,18 +3,26 @@
     md_bg_color: 1, 1, 1, 1
 
     FloatLayout:
+        MDIconButton:
+            on_release: root.voltar()
+            icon: 'arrow-left'
+            theme_font_size: 'Custom'
+            font_size: '40dp'
+            theme_icon_color: 'Custom'
+            icon_color: "black"
+            pos_hint: {'center_y': 0.95, 'center_x': 0.1}
 
         MDLabel:
             text: 'Criar uma conta para '
             font_style: 'Headline'
             role: 'large'
-            pos_hint: {'center_x': 0.5, 'center_y': 0.9}
+            pos_hint: {'center_x': 0.5, 'center_y': 0.85}
             halign: 'center'
 
         MDCard:
             style: 'elevated'
             size_hint: 0.46, 0.29
-            pos_hint: {'center_y': 0.7, 'center_x': 0.26}
+            pos_hint: {'center_y': 0.65, 'center_x': 0.26}
             theme_shadow_color: "Custom"
             shadow_color: 'black'
             theme_bg_color: "Custom"
@@ -47,7 +55,7 @@
         MDCard:
             style: 'elevated'
             size_hint: 0.48, 0.29
-            pos_hint: {'center_y': 0.7, 'center_x': 0.75}
+            pos_hint: {'center_y': 0.65, 'center_x': 0.75}
             theme_shadow_color: "Custom"
             shadow_color: "black"
             theme_bg_color: "Custom"
