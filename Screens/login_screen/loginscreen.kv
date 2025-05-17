@@ -1,0 +1,163 @@
+<LoginScreen>:
+    name: "Login"
+    md_bg_color: self.theme_cls.backgroundColor
+
+    FloatLayout:
+        MDButton:
+            style: "text"
+            pos_hint: {"top": 0.99, "center_x": 0.8}
+
+            MDButtonText:
+                text: "Create account"
+                theme_text_color: "Custom"
+                text_color:"white" if root.theme_cls.theme_style == "Dark" else "black"
+                font_style: "Title"
+                role: "small"
+
+
+        MDIconButton:
+            icon: "theme-light-dark"
+            theme_text_color: "Custom"
+            text_color:"white" if root.theme_cls.theme_style == "Dark" else "black"
+            pos_hint: {"center_y": 0.95}
+            on_release: root.theme()
+
+        MDLabel:
+            text: "Login"
+            bold: True
+            font_style: "Display"
+            role: "small"
+            halign: "center"
+            pos_hint: {"center_y": 0.85, "center_x": 0.5}
+
+        MDLabel:
+            text: "Por favor, insira suas informações abaixo para fazer login na sua conta."
+            halign: "center"
+            font_style: "Title"
+            role: "small"
+            size_hint: 0.8, None
+            size: 255, 15
+            pos_hint: {'center_x': 0.5, 'center_y': 0.74}
+
+
+        MDTextField:
+            id: usuario
+            hint_text: "Usuario ou email"
+            pos_hint: {"center_y": 0.61, "center_x": 0.5}
+            size_hint: 0.8, None
+            icon_right: "account"
+            mode: "outlined"
+
+            MDTextFieldHintText:
+                text: "Usuario ou email"
+
+            MDTextFieldTrailingIcon:
+                icon: "account"
+
+        MDLabel:
+            id: encontrar
+            text: ''
+            theme_text_color: "Custom"
+            text_color: 'red'
+            pos_hint: {"center_y": 0.55, "center_x": 0.62}
+            font_style: "Label"
+            role: "small"
+
+        MDLabel:
+            id: senha_correta
+            text: ''
+            theme_text_color: "Custom"
+            text_color: 'red'
+            pos_hint: {"center_y": 0.43, "center_x": 0.62}
+            font_style: "Label"
+            role: "small"
+
+
+        MDTextField:
+            id: senha
+            pos_hint: {"center_y": 0.49, "center_x": 0.5}
+            color_mode: 'custom'
+            size_hint: None, None
+            mode: "outlined"
+            size_hint: 0.8, None
+            icon_right: "lock"
+            foreground_color_focus: 0, 1, 1, 1
+            password: True
+
+            MDTextFieldHintText:
+                text: "Senha"
+
+            MDTextFieldTrailingIcon:
+                icon: 'lock'
+
+        MDButton:
+            style: "text"
+            pos_hint: {"center_y": 0.43, "center_x": 0.74}
+            on_release: root.chamar_trocar()
+
+
+            MDButtonText:
+                text: "Esqueceu a senha?"
+                theme_text_color: "Custom"
+                text_color:"white" if root.theme_cls.theme_style == "Dark" else "black"
+                font_style: "Title"
+                role: "small"
+
+        MDButton:
+            style: "tonal"
+            pos_hint: {"center_y": 0.35, "center_x": 0.5}
+            theme_width: "Custom"
+            theme_bg_color: "Custom"
+            height: "56dp"
+            size_hint_x: .8
+            md_bg_color: 0, 0, 0.9, 1
+            on_release: root.focus()
+
+
+
+            MDButtonText:
+                text: "Entrar"
+                theme_text_color: "Custom"
+                text_color: "white" if root.theme_cls.theme_style == "Dark" else "black"
+                font_style: "Title"
+                pos_hint: {"center_y": 0.50, "center_x": 0.5}
+                role: "large"
+
+
+
+        MDLabel:
+            text: "ou utilize uma conta de rede social"
+            font_style: "Title"
+            role: "small"
+            pos_hint: {"center_y": 0.26}
+            halign: "center"
+
+
+        MDCard:
+            size_hint: None, None
+            size: "50dp", "50dp"
+            pos_hint: {"center_x": 0.25, "center_y": 0.18}
+
+            AsyncImage:
+                source: "https://raw.githubusercontent.com/SatoruGojoMaisForte/logos/main/Images/Logo_google/logo_google.png"
+                allow_stretch: True
+
+        MDCard:
+            size_hint: None, None
+            size: "50dp", "50dp"
+            pos_hint: {"center_x": 0.48, "center_y": 0.18}
+            on_release: root.click()
+
+            AsyncImage:
+                source: "https://raw.githubusercontent.com/SatoruGojoMaisForte/logos/main/Images/Logo_facebook/logo_facebook.png"
+                allow_stretch: True
+
+        MDCard:
+            size_hint: None, None
+            size: "50dp", "50dp"
+            pos_hint: {"center_x": 0.73, "center_y": 0.18}
+            on_release: root.click()
+
+            AsyncImage:
+                source: "https://raw.githubusercontent.com/SatoruGojoMaisForte/logos/main/Images/Logo_twitter/logo_twitter.png"
+                allow_stretch: True

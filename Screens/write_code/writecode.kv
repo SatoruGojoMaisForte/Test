@@ -1,0 +1,84 @@
+<WriteCode>:
+    name: "write"
+    md_bg_color: self.theme_cls.backgroundColor
+
+    FloatLayout:
+        MDTopAppBar:
+            type: "small"
+            pos_hint: {"center_x": .5, "top": 1}
+
+
+            MDTopAppBarLeadingButtonContainer:
+
+                MDActionTopAppBarButton:
+                    icon: 'arrow-left'
+
+
+            MDTopAppBarTitle:
+                text: "Codigo de verificação"
+                halign: 'center'
+
+        MDLabel:
+            text: 'Insira o codigo'
+            bold: True
+            size_hint: None, None
+            size: "200dp", "100dp"
+            font_style: "Title"
+            role: "large"
+            pos_hint: {"center_x": 0.5, "center_y": 0.80}
+            halign: "center"
+
+        MDLabel:
+            text: 'Insira seu codigo de 6 enviado pelo seu email logo abaixo'
+            size_hint: None, None
+            size: "320dp", "150dp"
+            font_style: "Body"
+            role: "medium"
+            pos_hint: {"center_x": 0.5, "center_y": 0.70}
+            halign: "center"
+
+        MDLabel:
+            id: erros
+            text: ''
+            theme_text_color: "Custom"
+            text_color: 'red'
+            pos_hint: {"center_y": 0.51, "center_x": 0.65}
+            font_style: "Label"
+            role: "medium"
+
+        MDTextField:
+            id: codigo
+            pos_hint: {"center_y": 0.57, "center_x": 0.5}
+            size_hint: 0.8, None
+            icon_right: "account"
+            mode: "outlined"
+            theme_line_color: "Custom"
+            line_color_normal: "black"
+            on_text: root.check_text_length()
+
+            canvas.before:
+                #Color:
+                 #   rgba: 1, 0, 0, 1  # Red color
+                Line:
+                    rectangle: self.x, self.y, self.width, self.height
+                    width: 2
+
+        MDButton:
+            style: "tonal"
+            pos_hint: {'top': .2, "center_x": 0.5}
+            theme_width: "Custom"
+            theme_bg_color: "Custom"
+            height: "52dp"
+            size_hint_x: .8
+            md_bg_color: 0, 0, 0.9, 1
+            on_release: root.check()
+
+            MDButtonText:
+                text: "Verificar"
+                theme_text_color: "Custom"
+                text_color: "white" if root.theme_cls.theme_style == "Dark" else "black"
+                font_style: "Title"
+                bold: True
+                pos_hint: {"center_y": 0.50, "center_x": 0.5}
+                role: "medium"
+
